@@ -11,10 +11,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "core\\": "items/"
+            "core\\": "src/"
         }
     },
-    "minimum-stability": "dev",
     "require": {
         "php": "^7.4 | ^8.0"
     }
