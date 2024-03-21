@@ -4,26 +4,25 @@ namespace core;
 
 class Bootstrap
 {
-    public function getConfigs(string $path = '/../config'): array
+    public function getConfigs($path): array
     {
         $settings = [];
-        $configPath = __DIR__ . $path;
 
-        foreach (scandir($configPath) as $file) {
+        foreach (scandir($path) as $file) {
             $name = explode('.', $file)[0];
             if (!empty($name)) {
-                $settings[$name] = include $configPath . '/' . $file;
+                $settings[$name] = include $path . '/' . $file;
             }
         }
 
         return $settings;
     }
 
-    public function run(): Src\Application
+    public function run($rootDir): Src\Application
     {
-        require_once __DIR__ . '/../routes/web.php';
-
-        $app = new Src\Application(new Src\Settings($this->getConfigs()));
+        require_once $routeDir  . '/../routes/web.php';
+        $configDir = $rootDir . '/../config';
+        $app = new Src\Application(new Src\Settings($this->getConfigs($configDir)));
 
         function app() {
             global $app;
