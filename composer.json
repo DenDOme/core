@@ -1,0 +1,21 @@
+{
+    "name": "dendome/core",
+    "description": "mvc core library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DenDOme",
+            "email": "newlifeofkirim@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "core\\": "items/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    }
+}
