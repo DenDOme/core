@@ -20,7 +20,7 @@ class Bootstrap
 
     public function run($rootDir): Src\Application
     {
-        require_once $routeDir  . '/../routes/web.php';
+        require_once $rootDir  . '/../routes/web.php';
         $configDir = $rootDir . '/../config';
         $app = new Src\Application(new Src\Settings($this->getConfigs($configDir)));
 
